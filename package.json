@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@langchain/community": "^0.3.46",
+    "@langchain/core": "^0.3.58",
+    "@langchain/google-genai": "^0.2.12",
+    "@langchain/pinecone": "^0.2.0",
+    "@pinecone-database/pinecone": "^5.1.0",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "langchain": "^0.3.28",
+    "multer": "^2.0.1",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^11.1.0"
+  }
+}

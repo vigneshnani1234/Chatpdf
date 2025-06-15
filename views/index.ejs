@@ -1,0 +1,30 @@
+<!-- Include the header partial at the top -->
+<%- include('partials/header') %>
+
+<div class="main-content">
+    <div class="upload-container">
+        <h1>Chat with Your PDF</h1>
+        <p>Upload a PDF document to begin a conversation.</p>
+        
+        <!-- 
+            IMPORTANT:
+            - action="/upload": Submits the form to our POST /upload route.
+            - method="POST": Required for file uploads.
+            - enctype="multipart/form-data": Absolutely essential for file uploads. Without this, the server won't receive the file.
+        -->
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="pdfFile" class="file-label">Choose a PDF File</label>
+            
+            <!-- 
+                - name="pdfFile": This MUST match the name we used in our multer middleware in routes/index.js: 
+                  upload.single('pdfFile') 
+            -->
+            <input type="file" name="pdfFile" id="pdfFile" required accept=".pdf">
+            
+            <button type="submit" class="btn-primary">Upload & Process</button>
+        </form>
+    </div>
+</div>
+
+<!-- Include the footer partial at the bottom -->
+<%- include('partials/footer') %>

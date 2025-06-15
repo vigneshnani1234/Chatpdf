@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class="chat-window">
+    <%# This is an EJS comment. We will loop through the chat history here. %>
+    <% if (chatHistory && chatHistory.length > 0) { %>
+        <% chatHistory.forEach(message => { %>
+            <%# Determine the class based on the message role %>
+            <% if (message.role === 'user') { %>
+                <div class="message-container user-container">
+                    <div class="message user-message">
+                        <p><%= message.content %></p>
+                    </div>
+                </div>
+            <% } else if (message.role === 'ai') { %>
+                <div class="message-container ai-container">
+                    <div class="message ai-message">
+                        <p><%= message.content %></p>
+                    </div>
+                </div>
+            <% } else if (message.role === 'system') { %>
+                <div class="message-container system-container">
+                    <div class="message system-message">
+                        <p><em><%= message.content %></em></p>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+    <% } else { %>
+        <div class="message system-message">
+            <p><em>No messages yet. The conversation will appear here.</em></p>
+        </div>
+    <% } %>
+</div>
+
+<div class="chat-input-form">
+    <form action="/ask" method="POST" class="input-form">
+        <input 
+            type="text" 
+            name="question" 
+            placeholder="Ask a question about the PDF..." 
+            required
+            autocomplete="off"
+        >
+        <button type="submit" class="btn-primary">Send</button>
+    </form>
+</div>
+
+
+<%- include('partials/footer') %>

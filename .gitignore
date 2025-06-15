@@ -1,0 +1,30 @@
+# Node.js dependencies
+# This is the most important line! It prevents the huge folder of
+# installed packages from being uploaded to Git.
+node_modules/
+
+# Environment variables
+# This is a critical security measure. It prevents your secret API keys
+# from being committed to your repository.
+.env
+
+# Temporary upload folder
+# We don't want to commit the PDFs that users upload.
+uploads/
+
+# Log files
+# It's good practice to ignore log files that might be generated.
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-generated files
+# Ignores files created by macOS, Windows, and Linux systems.
+.DS_Store
+Thumbs.db
+.ehthumbs.db
+
+# IDE-specific files
+# Ignores configuration files from editors like VS Code.
+.vscode/
